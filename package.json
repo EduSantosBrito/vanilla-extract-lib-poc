@@ -1,0 +1,114 @@
+{
+  "name": "vanilla-extract-lib-poc",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduSantosBrito/vanilla-extract-lib-poc.git"
+  },
+  "author": "EduSantosBrito <edu.santos.brito@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EduSantosBrito/vanilla-extract-lib-poc/issues"
+  },
+  "homepage": "https://github.com/EduSantosBrito/vanilla-extract-lib-poc#readme",
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "dev": "npm run storybook",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepare": "husky install && npm run build",
+    "type-check": "tsc",
+    "generate:component": "node scripts/generate-component.mjs && prettier --write ./src/components && eslint --fix ./src/components"
+  },
+  "engines": {
+    "npm": "please use yarn",
+    "node": "18"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "lint-staged": {
+    "**/*.(js|ts|tsx)": [
+      "eslint --fix"
+    ],
+    "**/*.(js|json|ts|tsx)": [
+      "prettier --write"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "tslib": ">=2.x"
+  },
+  "devDependencies": {
+    "@clack/core": "^0.3.2",
+    "@clack/prompts": "^0.6.3",
+    "@commitlint/cli": "^17.4.4",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addons": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/client-api": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.16",
+    "@testing-library/dom": "7.31.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "12.8.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "@vanilla-extract/css": "^1.9.5",
+    "@vanilla-extract/dynamic": "^2.0.3",
+    "@vanilla-extract/recipes": "^0.3.0",
+    "@vanilla-extract/sprinkles": "^1.5.1",
+    "@vanilla-extract/vite-plugin": "^3.8.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "builtin-modules": "3.3.0",
+    "eslint": "^8.24.0",
+    "eslint-config-next": "^13.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-i18next": "^6.0.0-4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.7",
+    "husky": "^8.0.3",
+    "jsdom": "^21.1.0",
+    "lint-staged": "^13.1.2",
+    "next": "^13.2.4",
+    "picocolors": "^1.0.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-organize-imports": "^3.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rimraf": "^4.3.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vite-tsconfig-paths": "^4.0.5",
+    "vitest": "^0.29.2",
+    "webpack": "4.46.0"
+  }
+}
